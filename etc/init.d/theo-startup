@@ -1,0 +1,21 @@
+#! /bin/sh
+
+case "$1" in
+  start)
+    echo "Starting mosquitto"
+    # run application you want to start
+    /usr/local/sbin/mosquitto -c /home/pi/theo/mosquitto.conf
+    ;;
+  stop)
+    echo "Stopping mosquitto"
+    # kill application you want to stop
+    killall mosquitto
+    ;;
+  *)
+    echo "Usage: /etc/init.d/theo-startup {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0
+
